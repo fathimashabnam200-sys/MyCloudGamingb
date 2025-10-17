@@ -1,0 +1,11 @@
+#!/bin/bash
+sudo apt update -y && sudo apt upgrade -y
+sudo apt install -y git curl wget build-essential cmake libavahi-compat-libdnssd-dev
+git clone https://github.com/LizardByte/Sunshine.git /opt/sunshine
+cd /opt/sunshine
+mkdir build && cd build
+cmake ..
+make
+sudo make install
+sudo ufw allow 47984
+sunshine
